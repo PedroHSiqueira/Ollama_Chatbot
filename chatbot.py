@@ -11,6 +11,12 @@ Pergunta: {question}
 Resposta: 
 """
 
+template_apresentacao = """
+====================================================================================================
+Olá! seja bem-vindo, eu me chamo Len, e sou uma IA Chatbot!, escreva 'sair' para encerrar a conversa.
+====================================================================================================
+"""
+
 # Expecifica o modelo de linguagem a ser utilizado
 model = OllamaLLM(model="llama3")
 
@@ -23,7 +29,7 @@ chain = prompt | model
 #função para enviar a mensagem
 def handle_conversation():
     context = ""
-    print("Olá! seja bem-vindo, eu me chamo Len, e sou uma IA Chatbot!, escreva 'sair' para encerrar a conversa.")
+    print(template_apresentacao)
     while True:
         question = input("Você: ")
 
